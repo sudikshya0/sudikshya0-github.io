@@ -1,68 +1,51 @@
-// const hobbies = ["Freelancer", "Software Developer", "Cricket Lover"];
+const hobbies = ["Student", "ML Enthusiast"];
 
-// let count = 0;
-// let index = 0;
-// let currentHobby = "";
-// let letter = "";
+let count = 0;
+let index = 0;
+let currentHobby = "";
+let letter = "";
 
-// const typing = () => {
-//   if (count === hobbies.length) {
-//     count = 0;
-//   }
+const typing = () => {
+  if (count === hobbies.length) {
+    count = 0;
+  }
 
-//   currentHobby = hobbies[count];
-//   letter = currentHobby.slice(0, ++index);
+  currentHobby = hobbies[count];
+  letter = currentHobby.slice(0, ++index);
 
-//   document.querySelector(".hero__text__dynamic").textContent = letter;
+  document.querySelector(".hero__text__dynamic").textContent = letter;
 
-//   if (letter.length === currentHobby.length) {
-//     count++;
-//     index = 0;
-//   }
+  if (letter.length === currentHobby.length) {
+    count++;
+    index = 0;
+  }
 
-//   setTimeout(typing, 150);
-// };
+  setTimeout(typing, 150);
+};
 
-// typing();
+typing();
 
 //button click
-//about click
-document.querySelector(".header__about").addEventListener("click",()=>
-{
-    console.log('click');
-    document.querySelector(".about__container").scrollIntoView();
+//name click
+document.querySelector(".header__name").addEventListener("click", () => {
+  document.querySelector(".hero__container").scrollIntoView();
+});
 
+//about click
+document.querySelector(".header__about").addEventListener("click", () => {
+  document.querySelector(".about__container").scrollIntoView();
 });
+
 //contact click
-document.querySelector(".header__contact").addEventListener("click",()=>
-{
-    console.log('click');
-    document.querySelector(".contact__container").scrollIntoView();
-})
-//download click
-document.querySelector(".header__download").addEventListener("click", () => 
-{
-  consoole.log('click');
-  window.open("E:\JavaScript\PORTFOLIO\cv\Sudikshya - Resume.pdf", "_blank");
+document.querySelector(".header__contact").addEventListener("click", () => {
+  document.querySelector(".contact__container").scrollIntoView();
 });
-//facebook click
-document.querySelector(".footer__facebook").addEventListener("click",()=>
-{
-    console.log('click');
-    window.open("https://www.facebook.com/rajad.shakya", "_blank");
-})
-//instagram click
-document.querySelector(".footer__insta").addEventListener("click",()=>
-{
-    console.log('click');
-    window.open("https://www.instagram.com/rajadshakya/", "_blank");
-})
-//linkedin click
-document.querySelector(".footer__linkedin").addEventListener("click",()=>
-{
-    console.log('click');
-    window.open("https://www.linkedin.com/in/rajad-shakya-671649159/", "_blank");
-})
+
+//download click
+document.querySelector(".header__download").addEventListener("click", () => {
+  window.open("./cv/Sudikshya - Resume.pdf", "_blank");
+});
+
 //form handle
 const onSubmit = () => {
   const name = document.querySelector(".contact__name");
@@ -76,6 +59,18 @@ const onSubmit = () => {
   } else if (message.value === "") {
     alert("message is required");
   } else {
+    // Email.send({
+    //   Host: "smtp.gmail.com",
+    //   Username: "shakyarajad7@gmail.com",
+    //   Password: "",
+    //   To: "shakyarajad1@gmail.com",
+    //   From: email.value,
+    //   Subject: `Message from ${name.value}`,
+    //   Body: message.value,
+    // }).then((message) => {
+    //   console.log("message", message);
+    //   alert("mail sent successfully");
+    // });
     alert("mail sent successfully");
   }
 };
